@@ -24,12 +24,9 @@ function AppartementDetail() {
     return (
         <div className="appartement-detail">
             <header className="header">
-                {/* Logo et navigation */}
-                <img src="path_to_logo" alt="Kosa Logo" />
-                <nav>
-                    <a href="/">Accueil</a>
-                    <a href="/about">À propos</a>
-                </nav>
+                
+               
+                
             </header>
             <img src={appartement.cover} alt={appartement.title} className="appartement-image" />
             <h1>{appartement.title}</h1>
