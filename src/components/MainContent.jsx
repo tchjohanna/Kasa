@@ -17,10 +17,10 @@ function MainContent() {
         <div>
             <Banner imageUrl={img1} altText="Description de l'image" />
             <div className="locations">
-                {allResources.map((resource, index) => (
+                {allResources.map((resource) => (
                     <Card
-                        key={index}
-                        id={index} // transmettez 'index' comme 'id'
+                        key={resource.id}
+                        id={resource.id}
                         title={resource.title}
                         imageUrl={resource.cover}
                     />

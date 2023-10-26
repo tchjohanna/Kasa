@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'; 
-
-
-function Dropdown({ title, content, isOpen, toggleDropdown }) {
+function Dropdown({ title, content }) {
+    // Ici, les variables title, content, et isOpen sont accessibles :
+    console.log(title, content);
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleDropdown = () => setIsOpen(!isOpen);
     return (
       <div className="dropdown-section">
         <div className="dropdown-title" onClick={toggleDropdown}>
@@ -13,13 +15,6 @@ function Dropdown({ title, content, isOpen, toggleDropdown }) {
         {isOpen && <div className="dropdown-content">{content}</div>}
       </div>
     );
-  }
-  
-  export default Dropdown;
-  
+}
 
-  /**Dans le composant Dropdown, nous recevons plusieurs props :
-title: Le titre de la section du dropdown.
-content: Le contenu de la section du dropdown.
-isOpen: Un booléen qui indique si le dropdown est ouvert ou fermé.
-toggleDropdown: Une fonction pour ouvrir ou fermer le dropdown lorsqu'on clique sur le titre. */
+export default Dropdown;

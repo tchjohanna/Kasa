@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import Banner from '../components/Banner'; 
@@ -12,7 +12,6 @@ import '../assets/styles/style.scss';
 
 
 function AboutContent() {
-  const [selectedSection, setSelectedSection] = useState(null);
 
   const sections = [
     {
@@ -42,8 +41,6 @@ function AboutContent() {
           key={index}
           title={item.title}
           content={item.content}
-          isOpen={selectedSection === item.title}
-          toggleDropdown={() => setSelectedSection(selectedSection === item.title ? null : item.title)}
         />
       ))}
     </div>

@@ -1,44 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import resourcesData from '../assets/ressources.json'; 
-
-console.log("Données de resourcesData:", resourcesData);
-
+import Dropdown from './DropDown'; 
+import Carousel from './Carousel';
+import NotFound from '../views/NotFound';
 function AppartementDetail() {
     const { id } = useParams();
-    console.log("ID récupéré:", id);
-    
-    // Convertissez l'ID en un index numérique
-    const index = Number(id);
-
     // Accédez à l'appartement en utilisant l'index
-    const appartement = resourcesData[index];
+    const appartement = resourcesData.find((resource) => {
+        return resource.id === id
+    });
 
-    console.log("Tous les identifiants:", resourcesData.map(appt => appt.identifiant));
-    console.log("Appartement trouvé:", appartement);
+    console.log(appartement)
+
+    const [isDescriptionDropdownOpen, setIsDescriptionDropdownOpen] = useState(false);
+const [isEquipementsDropdownOpen, setIsEquipementsDropdownOpen] = useState(false);
+
 
     if (!appartement) {
-        return <div>Appartement non trouvé</div>;
+        return <NotFound />;
     }
 
     return (
         <div className="appartement-detail">
             <header className="header">
-                
-               
-                
+                {/* Ici j'ai ajouté le rendu de l'image et du nom de l'hôte */}
+                <div className="host-details">
+                    <img src={appartement.host.picture} alt={appartement.host.name} className="host-picture" />
+                    <span>{appartement.host.name}</span>
+                </div>
+                <div className="rating">
+                    {Array(5).fill().map((_, i) => (
+                        <span key={i}>{i < appartement.rating ? "★" : "☆"}</span>
+                    ))}
+                </div>
             </header>
-            <img src={appartement.cover} alt={appartement.title} className="appartement-image" />
+            <Carousel pictures={appartement.pictures} />
             <h1>{appartement.title}</h1>
             <p className="location">{appartement.location}</p>
             <div className="tags">
-                {/* Ici, vous pouvez mapper sur les mots clés de l'appartement pour les afficher */}
-                {appartement["Mots clés"].map(tag => (
+                {appartement.tags.map(tag => (
                     <span key={tag}>{tag}</span>
                 ))}
             </div>
             <p className="description">{appartement.description}</p>
-            {/* Autres détails comme la description, le prix, etc. */}
+            
+            <div className="dropdown-container">
+            
+            
+            <Dropdown 
+    title="Description" 
+    content="Votre maison loin de chez vous. Que vous veniez de l'autre bout du monde, ou juste de quelques stations de RER, vous vous sentirez chez vous dans notre appartement." 
+/>
+
+<Dropdown 
+    title="Equipements" 
+    content={appartement.description} 
+/>
+
+
+            </div>
         </div>
     );
 }

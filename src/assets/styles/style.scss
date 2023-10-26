@@ -140,7 +140,7 @@ header, .header {
 
   h1 {
     font-size: 24px;
-    color: #333;
+    color: $secondary-color;
     margin: 20px 0;
   }
 
@@ -245,7 +245,7 @@ footer{
 
   h1 {
       font-size: 5rem;
-      color: #ff6666; 
+      color: $secondary-color;
       margin-bottom: 1rem;
   }
 
@@ -281,7 +281,7 @@ footer{
 
   h1 {
     font-size: 24px;
-    color: #333;
+    color: $secondary-color;
     margin-bottom: 10px;
   }
 
@@ -297,7 +297,7 @@ footer{
     margin-bottom: 20px;
 
     span {
-      background-color: $primary-color;
+      background-color: $secondary-color;
       color: white;
       padding: 5px 10px;
       border-radius: 5px;
@@ -306,5 +306,77 @@ footer{
 
   .description {
     color: #777;
+  }
+}
+/*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
+
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+      margin-right: 10px; // Ajoutez une marge à droite pour espacer les dropdowns
+  }
+
+  // Enlevez la marge à droite pour le dernier dropdown
+  > :last-child {
+      margin-right: 0;
+  }
+}
+
+.dropdown {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &-title {
+      font-size: 20px;
+      color: $secondary-color;
+      cursor: pointer;
+      display: flex;
+      align-items: left;
+      justify-content: space-between;
+  }
+
+  &-content {
+      margin-top: 20px;
+      color: #777;
+  }
+
+  &.open .dropdown-content {
+      display: block; // Show content when dropdown is open
+  }
+
+  &.open .dropdown-title:after {
+      transform: rotate(180deg); // Flip the arrow when open
+  }
+}
+
+.carousel {
+  .content-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .arrow {
+      display: inline-block;
+      position: absolute;
+      &.right {
+        right: 0;
+      }
+      &.left {
+        left: 0;
+      }
+    }
+  }
+  .counter {
+    display: flex;
+    gap: 8px;
   }
 }
