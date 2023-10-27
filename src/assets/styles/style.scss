@@ -380,3 +380,36 @@ footer{
     gap: 8px;
   }
 }
+
+/***photo host et etoile ********************/
+.appartement-detail{
+  position: relative; /* Pour permettre un positionnement absolu à ses enfants */
+
+}
+
+
+.header div img {
+  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
+  bottom: 150px;        /* En bas du conteneur */
+  right: 0;           /* À droite du conteneur */
+  border-radius: 50%; /* Cela rendra l'image complètement ronde */
+  
+}
+
+.appartement-detail .header  .rating {
+  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
+  bottom: 110px;        /* En bas du conteneur */
+  right: 0;           /* À droite du conteneur */
+  border-radius: 50%;
+}
+
+/**DESIGNer  LE NOM DE L HOTE */
+.host-details > p {
+  position: absolute;
+  bottom: 180px;        
+  right: 7%; 
+  color:red;
+  font-weight: 600;  
+  white-space: pre-line !important;    
+     
+}

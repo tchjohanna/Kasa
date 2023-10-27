@@ -6,15 +6,20 @@ import Carousel from './Carousel';
 import NotFound from '../views/NotFound';
 function AppartementDetail() {
     const { id } = useParams();
-    // Accédez à l'appartement en utilisant l'index
+
     const appartement = resourcesData.find((resource) => {
         return resource.id === id
     });
 
-    console.log(appartement)
-
     const [isDescriptionDropdownOpen, setIsDescriptionDropdownOpen] = useState(false);
-const [isEquipementsDropdownOpen, setIsEquipementsDropdownOpen] = useState(false);
+    const [isEquipementsDropdownOpen, setIsEquipementsDropdownOpen] = useState(false);
+
+    const formatName = (name) => {
+        return name.replace(' ', ' \n');
+    };
+    
+
+ 
 
 
     if (!appartement) {
@@ -25,9 +30,11 @@ const [isEquipementsDropdownOpen, setIsEquipementsDropdownOpen] = useState(false
         <div className="appartement-detail">
             <header className="header">
                 {/* Ici j'ai ajouté le rendu de l'image et du nom de l'hôte */}
+                
                 <div className="host-details">
                     <img src={appartement.host.picture} alt={appartement.host.name} className="host-picture" />
-                    <span>{appartement.host.name}</span>
+                    <p className="host-name">{formatName(appartement.host.name)}</p>
+
                 </div>
                 <div className="rating">
                     {Array(5).fill().map((_, i) => (
@@ -65,3 +72,4 @@ const [isEquipementsDropdownOpen, setIsEquipementsDropdownOpen] = useState(false
 }
 
 export default AppartementDetail;
+
