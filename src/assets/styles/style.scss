@@ -379,47 +379,34 @@ footer{
 
 
 
- 
-  .dropdown-container {
+.dropdown-section {
+  
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  max-width: 100%;
+
+  .dropdown-title {
+    
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    align-items: center;
+  }
+
+  .dropdown-content {
+    padding: 10px 15px;
+    background-color: rgb(234, 234, 234);
+    border-top: 1px solid #ccc;
+    color: red;
+    margin-top: -5px;
+    border-radius: 0 0 10px 10px;
    
   }
-
-
-.dropdown {
-  position: relative;
-  width: calc(50% - 10px); /* Aligner les deux dropdowns à côté l'un de l'autre avec un espace de 10px entre eux */
-}
-
-.dropdown-title {
-  background-color: $secondary-color;
-  color: white;
-  
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-
-  .arrow {
-    transform: rotate(180deg); /* Faites pivoter la flèche vers le bas par défaut */
-    transition: transform 0.3s ease-out;
-  }
-}
-
-.dropdown-content {
-  background-color: gray;
-  color: red;
-  padding: 10px;
-  display: none; /* Masquer le contenu par défaut */
-}
-
-.dropdown.open .dropdown-title .arrow {
-  transform: rotate(0); /* Faites pivoter la flèche vers le haut lorsque le menu est ouvert */
-}
-
-.dropdown.open .dropdown-content {
-  display: block; /* Afficher le contenu lorsque le menu est ouvert */
 }
