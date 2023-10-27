@@ -50,7 +50,7 @@ function AppartementDetail() {
                     <span key={tag}>{tag}</span>
                 ))}
             </div>
-            <p className="description">{appartement.description}</p>
+            
             
             <div className="dropdown-container">
             
@@ -72,4 +72,3 @@ function AppartementDetail() {
 }
 
 export default AppartementDetail;
-

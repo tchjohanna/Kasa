@@ -308,50 +308,7 @@ footer{
     color: #777;
   }
 }
-/*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
 
-.dropdown-container {
-  display: flex;
-  justify-content: space-between;
-
-  > * {
-      margin-right: 10px; // Ajoutez une marge à droite pour espacer les dropdowns
-  }
-
-  // Enlevez la marge à droite pour le dernier dropdown
-  > :last-child {
-      margin-right: 0;
-  }
-}
-
-.dropdown {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-
-  &-title {
-      font-size: 20px;
-      color: $secondary-color;
-      cursor: pointer;
-      display: flex;
-      align-items: left;
-      justify-content: space-between;
-  }
-
-  &-content {
-      margin-top: 20px;
-      color: #777;
-  }
-
-  &.open .dropdown-content {
-      display: block; // Show content when dropdown is open
-  }
-
-  &.open .dropdown-title:after {
-      transform: rotate(180deg); // Flip the arrow when open
-  }
-}
 
 .carousel {
   .content-carousel {
@@ -387,29 +344,82 @@ footer{
 
 }
 
-
+/*******cibler l'image de l hote*/
 .header div img {
   position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 150px;        /* En bas du conteneur */
+  bottom: 115px;        /* En bas du conteneur */
   right: 0;           /* À droite du conteneur */
   border-radius: 50%; /* Cela rendra l'image complètement ronde */
-  
+  width: 4%;
 }
 
-.appartement-detail .header  .rating {
-  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 110px;        /* En bas du conteneur */
-  right: 0;           /* À droite du conteneur */
-  border-radius: 50%;
-}
-
-/**DESIGNer  LE NOM DE L HOTE */
+/***cibler  LE NOM DE L HOTE***/
 .host-details > p {
   position: absolute;
-  bottom: 180px;        
-  right: 7%; 
+  bottom: 110px;        
+  right: 5%; 
   color:red;
-  font-weight: 600;  
-  white-space: pre-line !important;    
+  font-weight: 500;  
+  white-space: pre-line ;   
+  font-size: 1.5em; 
      
+}
+
+/***cibler les étoiles */
+.appartement-detail .header  .rating {
+  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
+  bottom: 50px;        /* En bas du conteneur */
+  right: 0;           /* À droite du conteneur */
+  font-size : 2em;
+  color:red;
+}
+
+
+/*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
+
+
+
+ 
+  .dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+   
+  }
+
+
+.dropdown {
+  position: relative;
+  width: calc(50% - 10px); /* Aligner les deux dropdowns à côté l'un de l'autre avec un espace de 10px entre eux */
+}
+
+.dropdown-title {
+  background-color: $secondary-color;
+  color: white;
+  
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .arrow {
+    transform: rotate(180deg); /* Faites pivoter la flèche vers le bas par défaut */
+    transition: transform 0.3s ease-out;
+  }
+}
+
+.dropdown-content {
+  background-color: gray;
+  color: red;
+  padding: 10px;
+  display: none; /* Masquer le contenu par défaut */
+}
+
+.dropdown.open .dropdown-title .arrow {
+  transform: rotate(0); /* Faites pivoter la flèche vers le haut lorsque le menu est ouvert */
+}
+
+.dropdown.open .dropdown-content {
+  display: block; /* Afficher le contenu lorsque le menu est ouvert */
 }
