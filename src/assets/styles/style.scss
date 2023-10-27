@@ -324,6 +324,10 @@ footer{
     .arrow {
       display: inline-block;
       position: absolute;
+      
+      color: red;
+      font-size: 1.2rem;
+      margin: 10px;
       &.right {
         right: 0;
       }
@@ -335,6 +339,7 @@ footer{
   .counter {
     display: flex;
     gap: 8px;
+    display:none;
   }
 }
 
@@ -347,7 +352,7 @@ footer{
 /*******cibler l'image de l hote*/
 .header div img {
   position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 115px;        /* En bas du conteneur */
+  bottom: 220px;        /* En bas du conteneur */
   right: 0;           /* À droite du conteneur */
   border-radius: 50%; /* Cela rendra l'image complètement ronde */
   width: 4%;
@@ -356,8 +361,8 @@ footer{
 /***cibler  LE NOM DE L HOTE***/
 .host-details > p {
   position: absolute;
-  bottom: 110px;        
-  right: 5%; 
+  bottom: 200px;        
+  right: 6%; 
   color:red;
   font-weight: 500;  
   white-space: pre-line ;   
@@ -368,7 +373,7 @@ footer{
 /***cibler les étoiles */
 .appartement-detail .header  .rating {
   position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 50px;        /* En bas du conteneur */
+  bottom: 160px;        /* En bas du conteneur */
   right: 0;           /* À droite du conteneur */
   font-size : 2em;
   color:red;
@@ -377,7 +382,9 @@ footer{
 
 /*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
 
-
+.dropdown-container{
+  /*fdfqsdf*/
+}
 
 .dropdown-section {
   
