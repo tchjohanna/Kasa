@@ -467,8 +467,7 @@ footer{
   }
 }
 
-
-/*****************GESTION DES ERREURS VIA L ID ****************************************/
+/*****************GESTION DES ERREURS VIA L'ID ****************************************/
 
 .error-card {
   background-color: #ff6b6b;  // Rouge
@@ -476,16 +475,19 @@ footer{
   border: 1px solid #ccc;  // Gris
   padding: 10px;
   text-align: center;
+  display: none;  //  masquer par défaut les erreurs d'identifiants sur fond rouge 
 
   p {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   a {
-      color: #333;  // Noir
-      text-decoration: underline;
-      &:hover {
-          color: #555;  // Un ton plus clair de noir au survol
-      }
+    color: #333;  // Noir
+    text-decoration: underline;
+    &:hover {
+      color: #555;  // Un ton plus clair de noir au survol
+    }
   }
 }
+
+

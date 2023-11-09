@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 function Card({ title, imageUrl, id }) {
     // Ajoute une vérification pour s'assurer que 'id' existe
     if (!id) {
-        // Gère l'erreur en affichant un message ou en rendant un composant d'erreur
+        {/* La condition if (!id) vérifie si l'ID n'est pas défini (c'est-à-dire null ou undefined).
+Si c'est le cas, le composant Card affiche un message d'erreur indiquant que l'ID est indisponible.
+Cela permet d'éviter des erreurs potentielles lors de la construction du lien vers la page d'appartement (<Link to={/appartement/${id}}>) si l'ID est manquant.*/}
         return (
             <div className="card error-card">
                 <p>Erreur: ID indisponible</p>
