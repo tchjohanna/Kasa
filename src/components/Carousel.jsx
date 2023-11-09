@@ -21,15 +21,15 @@ const Carousel = ({pictures}) => {
                 <span className="arrow left" onClick={previus}>
                     <FontAwesomeIcon icon={faAngleLeft}/>
                 </span>
-                <img src={pictures[index]} />
+                <img src={pictures[index]} alt="cacoursel" />
                 <span className="arrow right" onClick={next} >
                     <FontAwesomeIcon icon={faAngleRight}/>
                 </span>
-            </div>
-            <div className='counter'>
-                <span>{index+1}</span>
-                <span>/</span>
-                <span>{pictures.length}</span>
+                <span className='counter'>
+                    <span>{index+1}</span>
+                    <span>/</span>
+                    <span>{pictures.length}</span>
+                </span>
             </div>
         </div>
     )

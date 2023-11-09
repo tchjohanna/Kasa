@@ -28,28 +28,35 @@ function AppartementDetail() {
 
     return (
         <div className="appartement-detail">
-            <header className="header">
-                {/* Ici j'ai ajouté le rendu de l'image et du nom de l'hôte */}
-                
-                <div className="host-details">
-                    <img src={appartement.host.picture} alt={appartement.host.name} className="host-picture" />
-                    <p className="host-name">{formatName(appartement.host.name)}</p>
-
-                </div>
-                <div className="rating">
-                    {Array(5).fill().map((_, i) => (
-                        <span key={i}>{i < appartement.rating ? "★" : "☆"}</span>
-                    ))}
-                </div>
-            </header>
             <Carousel pictures={appartement.pictures} />
-            <h1>{appartement.title}</h1>
-            <p className="location">{appartement.location}</p>
-            <div className="tags">
-                {appartement.tags.map(tag => (
-                    <span key={tag}>{tag}</span>
-                ))}
+            <div className="row">
+                <div className="col">
+                    <div>
+                        <h1>{appartement.title}</h1>
+                        <p className="location">{appartement.location}</p>
+                    </div>
+                    <div className="tags">
+                        {appartement.tags.map(tag => (
+                            <span key={tag}>{tag}</span>
+                        ))}
+                    </div>
+                </div>
+                <div className="header">
+                    {/* Ici j'ai ajouté le rendu de l'image et du nom de l'hôte */}
+                    
+                    <div className="host-details">
+                        <p className="host-name">{formatName(appartement.host.name)}</p>
+                        <img src={appartement.host.picture} alt={appartement.host.name} className="host-picture" />
+
+                    </div>
+                    <div className="rating">
+                        {Array(5).fill().map((_, i) => (
+                            <span key={i} className={i < appartement.rating ? "" : "grey"}>★</span>
+                        ))}
+                    </div>
+                </div>
             </div>
+            
             
             
             <div className="dropdown-container">

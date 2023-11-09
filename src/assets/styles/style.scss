@@ -10,6 +10,9 @@ body {
   margin-right:40px;
   margin-top: 20px;
   padding: 0;
+  @media (max-width: 767px) {
+    margin: 0;
+  }
 }
 
 // Styles pour Header
@@ -28,6 +31,35 @@ header, .header {
   }
 }
 
+.header {
+  display: block;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .host-details {
+    display: flex;
+    align-items: center;
+    img {
+      height: 64px;
+      width: 64px;
+      @media (max-width: 767px) {
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
 
   nav {
     a {
@@ -56,7 +88,7 @@ header, .header {
   background-repeat: no-repeat;
   border: 2px solid #ffffff;
   border-radius: 10px;
-  padding: 50px;
+  height: 223px;
   text-align: center;
   margin: 0 30px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -228,7 +260,7 @@ footer{
     padding: 10px 15px;
     background-color: rgb(234, 234, 234);
     border-top: 1px solid #ccc;
-    color: red;
+    color: #e74c3c;
     margin-top: -5px;
     border-radius: 0 0 10px 10px;
 }
@@ -269,7 +301,6 @@ footer{
 
 .appartement-detail {
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
   .appartement-image {
     width: 1600px;   /* Largeur fixe */
@@ -320,12 +351,15 @@ footer{
         height: 400px;
         object-fit: cover;
         border-radius: 10px;
+        @media (max-width: 767px) {
+          height: 255px;
+        }
     }
     .arrow {
       display: inline-block;
       position: absolute;
       
-      color: red;
+      color: white;
       font-size: 1.2rem;
       margin: 10px;
       &.right {
@@ -339,58 +373,73 @@ footer{
   .counter {
     display: flex;
     gap: 8px;
-    display:none;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }
 
 /***photo host et etoile ********************/
 .appartement-detail{
-  position: relative; /* Pour permettre un positionnement absolu à ses enfants */
 
 }
 
 /*******cibler l'image de l hote*/
 .header div img {
-  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 220px;        /* En bas du conteneur */
-  right: 0;           /* À droite du conteneur */
   border-radius: 50%; /* Cela rendra l'image complètement ronde */
-  width: 4%;
 }
 
 /***cibler  LE NOM DE L HOTE***/
 .host-details > p {
-  position: absolute;
-  bottom: 200px;        
-  right: 6%; 
-  color:red;
+
+  color:#e74c3c;
   font-weight: 500;  
   white-space: pre-line ;   
   font-size: 1.5em; 
-     
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 /***cibler les étoiles */
 .appartement-detail .header  .rating {
-  position: absolute; /* Permet de positionner l'image par rapport à son conteneur parent */
-  bottom: 160px;        /* En bas du conteneur */
-  right: 0;           /* À droite du conteneur */
   font-size : 2em;
-  color:red;
+  color:#e74c3c;
+  .grey {
+    color: #E3E3E3;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 
 /*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
 
 .dropdown-container{
-  /*fdfqsdf*/
+  display: flex;
+  gap: 20px;
+  .dropdown-section {
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {
+    display: block;
+    .dropdown-section {
+      width: 100%;
+    }
+  }
 }
 
 .dropdown-section {
   
   margin-bottom: 20px;
   border: 1px solid #ffffff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   margin-top: 30px;
   max-width: 100%;
 
@@ -409,11 +458,34 @@ footer{
 
   .dropdown-content {
     padding: 10px 15px;
-    background-color: rgb(234, 234, 234);
+    background-color: #F6F6F6;
     border-top: 1px solid #ccc;
-    color: red;
+    color: #e74c3c;
     margin-top: -5px;
     border-radius: 0 0 10px 10px;
    
+  }
+}
+
+
+/*****************GESTION DES ERREURS VIA L ID ****************************************/
+
+.error-card {
+  background-color: #ff6b6b;  // Rouge
+  color: #333;  // Noir
+  border: 1px solid #ccc;  // Gris
+  padding: 10px;
+  text-align: center;
+
+  p {
+      margin-bottom: 10px;
+  }
+
+  a {
+      color: #333;  // Noir
+      text-decoration: underline;
+      &:hover {
+          color: #555;  // Un ton plus clair de noir au survol
+      }
   }
 }
