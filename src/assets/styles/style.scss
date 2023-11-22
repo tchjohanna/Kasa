@@ -384,10 +384,7 @@ footer{
   }
 }
 
-/***photo host et etoile ********************/
-.appartement-detail{
 
-}
 
 /*******cibler l'image de l hote*/
 .header div img {
@@ -467,27 +464,164 @@ footer{
   }
 }
 
-/*****************GESTION DES ERREURS VIA L'ID ****************************************/
-
-.error-card {
-  background-color: #ff6b6b;  // Rouge
-  color: #333;  // Noir
-  border: 1px solid #ccc;  // Gris
-  padding: 10px;
-  text-align: center;
-  display: none;  //  masquer par défaut les erreurs d'identifiants sur fond rouge 
-
-  p {
-    margin-bottom: 10px;
+/*******version MOBILE PAGE D ACCUEIL PAGE ACCUEIL VERSION MOBILE type iphone XR ***********/
+@media (max-width: 767px) {
+  body {
+      font-family: $primary-font;
+      margin: 0;
+      padding: 0;
   }
 
-  a {
-    color: #333;  // Noir
-    text-decoration: underline;
-    &:hover {
-      color: #555;  // Un ton plus clair de noir au survol
-    }
+  header, .header {
+    padding: 10px 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Alignement vertical au début */
+    justify-content: flex-start; /* Alignement horizontal à gauche */
+    margin-top: 30px;    /* Marge en haut */
+    margin-right: 0px;  /* Marge à droite */
+    margin-bottom: 30px; /* Marge en bas */
+    margin-left: 0;      /* Aucune marge à gauche */
+  }
+  
+
+  header > div, .header > div {
+    /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
+    flex: none;
+  }
+
+  header div img, .header div img {
+    width: 100px;
+    height: auto;
+    margin-left: 0px;
+    margin-right: 70px;
+  }
+
+  header nav, .header nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color : red;
+      font-size: small;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+
+  header nav a, .header nav a {
+      margin: 0 10px; /* Espace entre les liens */
+      text-decoration: none;
+      color: inherit; /* Prend la couleur du parent */
+      font-weight: 600;
+  }
+
+  .banner-container {
+    margin: 30px 5%; /* Maintien de la marge */
+    height: 200px; /* Hauteur fixe pour assurer la visibilité */
+    font-size: 1.5rem;
+    background-size: cover; /* Pour couvrir tout l'espace disponible */
+    display: block; /* Assure que la bannière est affichée */
+  }
+
+  div {
+    margin: auto;
+  }
+
+  .locations {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne pour les appareils mobiles */
+    gap: 20px;
+    padding: 0px;
+    /*background-color: #f5f5f5;*/
+    border-radius: 10px;
+    margin: 60px auto 20px auto; /* Utilisez "auto" pour centrer horizontalement */
+  }
+  
+  .locations .card {
+    position: relative; /* Ajouté pour que le positionnement absolu des images soit relatif à ceci */
+    overflow: hidden; /* Pour que les bordures arrondies s'appliquent aux images aussi */
+    border-radius: 10px; /* Pour les bordures arrondies */
+  }
+  
+  .locations .card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 1; /* Assurez-vous que cette valeur est plus basse que celle du texte */
+    /*filter: brightness(70%);*/
+  }
+  
+  .locations .card .text-content {
+    position: absolute;
+    bottom: 10px; /* Ajustez en fonction de l'espacement souhaité depuis le bas de la carte */
+    left: 10px; /* Ajustez en fonction de l'espacement souhaité depuis la gauche de la carte */
+    z-index: 2; /* Assurez-vous que cette valeur est supérieure à celle de l'image */
+    color: white; /* Ou toute autre couleur selon votre design */
+    padding: 10px; /* Ajustez pour l'espacement autour du texte */
+    /* Ajoutez d'autres styles de texte si nécessaire */
+  }
+  
+
+  .listing {
+      padding: 10px 5%;
+  }
+
+  footer {
+      padding: 20px 5%;
+      align-items: center;
+  }
+
+  footer p {
+    padding-bottom: 100px;
   }
 }
 
 
+/* Media query pour les écrans de largeur 320px ou moins  type iphone 5 ou SE*/
+@media only screen and (max-width: 320px) {
+  header, .header {
+    padding: 10px 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Alignement vertical au début */
+    justify-content: flex-start; /* Alignement horizontal à gauche */
+    margin-top: 15px;    /* Marge en haut */
+    margin-right: 0px;  /* Marge à droite */
+    margin-bottom: 15px; /* Marge en bas */
+    margin-left: 0;      /* Aucune marge à gauche */
+  }
+  
+
+  header > div, .header > div {
+    /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
+    flex: none;
+  }
+
+  header div img, .header div img {
+    width: 80px;
+    height: auto;
+    margin-left: 0px;
+    margin-right: 50px;
+  }
+
+  header nav, .header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      color : red;
+      font-size: small;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+
+  header nav a, .header nav a {
+      margin: 0 5px; /* Espace entre les liens */
+      text-decoration: none;
+      color: inherit; /* Prend la couleur du parent */
+      font-weight: 600;
+      font-size: x-small;
+  }
+}
