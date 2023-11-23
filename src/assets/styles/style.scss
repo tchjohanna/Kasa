@@ -1,631 +1,632 @@
 // Variables et styles de base
 $primary-font: Arial, sans-serif;
-$primary-color: #f89e7d; 
+
+$primary-color: #f89e7d;
 $secondary-color: #ea4545;
 $background-color: #f5f5f5;
 
 body {
-  font-family: $primary-font;
-  margin-left: 40px;
-  margin-right:40px;
-  margin-top: 20px;
-  padding: 0;
-  @media (max-width: 767px) {
-    margin: 0;
-  }
+    font-family: $primary-font;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    padding: 0;
+    @media (max-width: 767px) {
+        margin: 0;
+    }
 }
 
 // Styles pour Header
-header, .header {
-  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.8));
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    img {
-      width: 100px;  // Définit la largeur de l'image
-      height: auto;  // Conserve le ratio d'aspect de l'image
-      margin-left: 20px;
+header,
+.header {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+        img {
+            width: 100px; // Définit la largeur de l'image
+            height: auto; // Conserve le ratio d'aspect de l'image
+            margin-left: 20px;
+        }
     }
-  }
 }
 
 .header {
-  display: block;
-  @media (max-width: 767px) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding: 0;
-  }
-  .host-details {
-    display: flex;
-    align-items: center;
-    img {
-      height: 64px;
-      width: 64px;
-      @media (max-width: 767px) {
-        height: 32px;
-        width: 32px;
-      }
+    display: block;
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0;
     }
-  }
+    .host-details {
+        display: flex;
+        align-items: center;
+        img {
+            height: 64px;
+            width: 64px;
+            @media (max-width: 767px) {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: 767px) {
-    display: block;
-  }
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 767px) {
+        display: block;
+    }
 }
 
-  nav {
+nav {
     a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: $secondary-color;
-      font-weight: 600;
-      &:hover {
-        color: $primary-color;
-      }
+        margin: 0 15px;
+        text-decoration: none;
+        color: $secondary-color;
+        font-weight: 600;
+        &:hover {
+            color: $primary-color;
+        }
 
-      &[aria-current="page"] {
-        text-decoration: underline;
-      }
+        &[aria-current="page"] {
+            text-decoration: underline;
+        }
     }
-  }
+}
 
-
-// Styles pour la banniere 
+// Styles pour la banniere
 .banner-container {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
-  height: 223px;
-  text-align: center;
-  margin: 0 30px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  font-size: 2rem;
-  
-  .banner-image {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-    object-position: center; 
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    border: 2px solid #ffffff;
     border-radius: 10px;
-    filter: brightness(70%); 
-  }
+    height: 223px;
+    text-align: center;
+    margin: 0 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+
+    .banner-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        filter: brightness(70%);
+    }
 }
 
 // Styles pour Locations
 .locations {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 50px;   
-  background-color: $background-color;
-  border-radius: 10px;
-  margin: 60px 30px 20px 30px; 
-
-  .card {
-    position: relative; // Important pour positionner les enfants en absolu
-    background-color: transparent; //
-    height: 250px;
-    width: 270px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 50px;
+    background-color: $background-color;
     border-radius: 10px;
-    padding-left: 33px;
-   
+    margin: 60px 30px 20px 30px;
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      z-index: 1;
-      filter: brightness(70%); // Diminue la luminosité de l'image de 30%
-      
-    }
+    .card {
+        position: relative; // Important pour positionner les enfants en absolu
+        background-color: transparent; //
+        height: 250px;
+        width: 270px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding-left: 33px;
 
-    h2 {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      color: white;
-      padding: 5px 10px;
-      margin: 0;
-      font-size: 16px;
-      border-radius: 5px;
-      z-index: 2;
-    }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            z-index: 1;
+            filter: brightness(70%); // Diminue la luminosité de l'image de 30%
+        }
 
-    .title {
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
+        h2 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
     }
-  }
 }
 
 // Styles pour Listing
 .listing {
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  .listing-image {
-    width: 100%;
-    height: auto;
-  }
-
-  h1 {
-    font-size: 24px;
-    color: $secondary-color;
-    margin: 20px 0;
-  }
-
-  p {
-    color: #777;
-  }
-
-  .tags {
-    display: flex;
-    gap: 10px;
-
-    span {
-      background-color: $primary-color;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
+    .listing-image {
+        width: 100%;
+        height: auto;
     }
-  }
+
+    h1 {
+        font-size: 24px;
+        color: $secondary-color;
+        margin: 20px 0;
+    }
+
+    p {
+        color: #777;
+    }
+
+    .tags {
+        display: flex;
+        gap: 10px;
+
+        span {
+            background-color: $primary-color;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
 }
 
 // Styles pour Footer
-footer{
-  background-color: black;
-  color: white;
- padding-bottom: 80px;;
-  padding-top:20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  margin-top: 40px;
+footer {
+    background-color: black;
+    color: white;
+    padding-bottom: 80px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 40px;
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: $primary-color;
-    
-  }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-color;
+    }
 
-  img {
-    width: 100px;
-    margin-bottom: 20px;
-    padding-top: 130px;
-  }
+    img {
+        width: 100px;
+        margin-bottom: 20px;
+        padding-top: 130px;
+    }
 
-  p {
-    color: #ffffff;
-    padding-bottom: 10px;
-  }
-}
-
-
-
-/*fichier AboutContent.jsx*/
-.about-content {
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 40px;
-
-  .dropdown-section {
-    margin-bottom: 20px;
-    border: 1px solid #ffffff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-top: 30px;
-
-    .dropdown-title {
-      padding: 10px 15px;
-      cursor: pointer;
-      background-color: #e74c3c;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px 10px 0 0; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-
-      &:hover {
-        background-color: darken(#e74c3c, 10%);
+    p {
+        color: #ffffff;
+        padding-bottom: 10px;
     }
 }
 
-.dropdown-content {
-    padding: 10px 15px;
-    background-color: rgb(234, 234, 234);
-    border-top: 1px solid #ccc;
-    color: #e74c3c;
-    margin-top: -5px;
-    border-radius: 0 0 10px 10px;
-}
-  }
+/*fichier AboutContent.jsx*/
+.about-content {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 40px;
+
+    .dropdown-section {
+        margin-bottom: 20px;
+        border: 1px solid #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+
+        .dropdown-title {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #e74c3c;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &:hover {
+                background-color: darken(#e74c3c, 10%);
+            }
+        }
+
+        .dropdown-content {
+            padding: 10px 15px;
+            background-color: rgb(234, 234, 234);
+            border-top: 1px solid #ccc;
+            color: #e74c3c;
+            margin-top: -5px;
+            border-radius: 0 0 10px 10px;
+        }
+    }
 }
 /***************************PAGE 404 ***********************/
 
 .not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
 
-  h1 {
-      font-size: 5rem;
-      color: $secondary-color;
-      margin-bottom: 1rem;
-  }
+    h1 {
+        font-size: 5rem;
+        color: $secondary-color;
+        margin-bottom: 1rem;
+    }
 
-  p {
-      font-size: 1.5rem;
-  }
+    p {
+        font-size: 1.5rem;
+    }
 }
 
 .return-home-link {
-  color: #ff6666; 
-  text-decoration: none;
-  margin-top: 1rem;
-  font-weight: bold;
-  
-  &:hover {
-      text-decoration: underline;
-  }
+    color: #ff6666;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 /******************STYLES LE DETAIL DE CHAQUE APPARTEMENT *********************/
 
 .appartement-detail {
-  padding: 20px;
+    padding: 20px;
 
-  .appartement-image {
-    width: 1600px;   /* Largeur fixe */
-    height: 400px;  /* Hauteur fixe */
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: 24px;
-    color: $secondary-color;
-    margin-bottom: 10px;
-  }
-
-  .location {
-    font-size: 20px;
-    color: #777;
-    margin-bottom: 20px;
-  }
-
-  .tags {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-
-    span {
-      background-color: $secondary-color;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-  }
-
-  .description {
-    color: #777;
-  }
-}
-
-
-.carousel {
-  .content-carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    img {
-        width: 100%;
-        height: 400px;
+    .appartement-image {
+        width: 1600px; /* Largeur fixe */
+        height: 400px; /* Hauteur fixe */
         object-fit: cover;
         border-radius: 10px;
-        @media (max-width: 767px) {
-          height: 255px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: $secondary-color;
+        margin-bottom: 10px;
+    }
+
+    .location {
+        font-size: 20px;
+        color: #777;
+        margin-bottom: 20px;
+    }
+
+    .tags {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        span {
+            background-color: $secondary-color;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
     }
-    .arrow {
-      display: inline-block;
-      position: absolute;
-      
-      color: white;
-      font-size: 1.2rem;
-      margin: 10px;
-      &.right {
-        right: 0;
-      }
-      &.left {
-        left: 0;
-      }
+
+    .description {
+        color: #777;
     }
-  }
-  .counter {
-    display: flex;
-    gap: 8px;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    justify-content: center;
-    color: white;
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
 }
 
+.carousel {
+    .content-carousel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            @media (max-width: 767px) {
+                height: 255px;
+            }
+        }
+        .arrow {
+            display: inline-block;
+            position: absolute;
 
+            color: white;
+            font-size: 1.2rem;
+            margin: 10px;
+            &.right {
+                right: 0;
+            }
+            &.left {
+                left: 0;
+            }
+        }
+    }
+    .counter {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        justify-content: center;
+        color: white;
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+}
 
 /*******cibler l'image de l hote*/
 .header div img {
-  border-radius: 50%; /* Cela rendra l'image complètement ronde */
+    border-radius: 50%; /* Cela rendra l'image complètement ronde */
 }
 
 /***cibler  LE NOM DE L HOTE***/
 .host-details > p {
-
-  color:#e74c3c;
-  font-weight: 500;  
-  white-space: pre-line ;   
-  font-size: 1.5em; 
-  @media (max-width: 767px) {
-    font-size: 16px;
-  }
+    color: #e74c3c;
+    font-weight: 500;
+    white-space: pre-line;
+    font-size: 1.5em;
+    @media (max-width: 767px) {
+        font-size: 16px;
+    }
 }
 
 /***cibler les étoiles */
-.appartement-detail .header  .rating {
-  font-size : 2em;
-  color:#e74c3c;
-  .grey {
-    color: #E3E3E3;
-  }
-  @media (max-width: 767px) {
-    font-size: 16px;
-  }
+.appartement-detail .header .rating {
+    font-size: 2em;
+    color: #e74c3c;
+    .grey {
+        color: #e3e3e3;
+    }
+    @media (max-width: 767px) {
+        font-size: 16px;
+    }
 }
-
 
 /*********MENU DEROULANT SUR CHAQUE DETAILS DE PAGES D APPARTEMENT DETAILS**********/
 
-.dropdown-container{
-  display: flex;
-  gap: 20px;
-  .dropdown-section {
-    width: 50%;
-  }
-
-  @media (max-width: 767px) {
-    display: block;
+.dropdown-container {
+    display: flex;
+    gap: 20px;
     .dropdown-section {
-      width: 100%;
+        width: 50%;
     }
-  }
+
+    @media (max-width: 767px) {
+        display: block;
+        .dropdown-section {
+            width: 100%;
+        }
+    }
 }
 
 .dropdown-section {
-  
-  margin-bottom: 20px;
-  border: 1px solid #ffffff;
-  margin-top: 30px;
-  max-width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    margin-top: 30px;
+    max-width: 100%;
 
-  .dropdown-title {
-    
-    padding: 10px 15px;
-    cursor: pointer;
-    background-color: #e74c3c;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .dropdown-title {
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: #e74c3c;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .dropdown-content {
-    padding: 10px 15px;
-    background-color: #F6F6F6;
-    border-top: 1px solid #ccc;
-    color: #e74c3c;
-    margin-top: -5px;
-    border-radius: 0 0 10px 10px;
-   
-  }
+    .dropdown-content {
+        padding: 10px 15px;
+        background-color: #f6f6f6;
+        border-top: 1px solid #ccc;
+        color: #e74c3c;
+        margin-top: -5px;
+        border-radius: 0 0 10px 10px;
+    }
 }
 
 /*******version MOBILE PAGE D ACCUEIL PAGE ACCUEIL VERSION MOBILE type iphone XR ***********/
 @media (max-width: 767px) {
-  body {
-      font-family: $primary-font;
-      margin: 0;
-      padding: 0;
-  }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
 
-  header, .header {
-    padding: 10px 5%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; /* Alignement vertical au début */
-    justify-content: flex-start; /* Alignement horizontal à gauche */
-    margin-top: 30px;    /* Marge en haut */
-    margin-right: 0px;  /* Marge à droite */
-    margin-bottom: 30px; /* Marge en bas */
-    margin-left: 0;      /* Aucune marge à gauche */
-  }
-  
+    header,
+    .header {
+        padding: 10px 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; /* Alignement vertical au début */
+        justify-content: flex-start; /* Alignement horizontal à gauche */
+        margin-top: 30px; /* Marge en haut */
+        margin-right: 0px; /* Marge à droite */
+        margin-bottom: 30px; /* Marge en bas */
+        margin-left: 0; /* Aucune marge à gauche */
+    }
 
-  header > div, .header > div {
-    /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
-    flex: none;
-  }
+    header > div,
+    .header > div {
+        /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
+        flex: none;
+    }
 
-  header div img, .header div img {
-    width: 100px;
-    height: auto;
-    margin-left: 0px;
-    margin-right: 70px;
-  }
+    header div img,
+    .header div img {
+        width: 100px;
+        height: auto;
+        margin-left: 0px;
+        margin-right: 70px;
+    }
 
-  header nav, .header nav {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      color : red;
-      font-size: small;
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
+    header nav,
+    .header nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: red;
+        font-size: small;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
-  header nav a, .header nav a {
-      margin: 0 10px; /* Espace entre les liens */
-      text-decoration: none;
-      color: inherit; /* Prend la couleur du parent */
-      font-weight: 600;
-  }
+    header nav a,
+    .header nav a {
+        margin: 0 10px; /* Espace entre les liens */
+        text-decoration: none;
+        color: inherit; /* Prend la couleur du parent */
+        font-weight: 600;
+    }
 
-  .banner-container {
-    margin: 30px 5%; /* Maintien de la marge */
-    height: 200px; /* Hauteur fixe pour assurer la visibilité */
-    font-size: 1.5rem;
-    background-size: cover; /* Pour couvrir tout l'espace disponible */
-    display: block; /* Assure que la bannière est affichée */
-  }
+    .banner-container {
+        margin: 30px 5%; /* Maintien de la marge */
+        height: 200px; /* Hauteur fixe pour assurer la visibilité */
+        font-size: 1.5rem;
+        background-size: cover; /* Pour couvrir tout l'espace disponible */
+        display: block; /* Assure que la bannière est affichée */
+    }
 
-  div {
-    margin: auto;
-  }
+    div {
+        margin: auto;
+    }
 
-  .locations {
-    display: grid;
-    grid-template-columns: 1fr; /* Une seule colonne pour les appareils mobiles */
-    gap: 20px;
-    padding: 0px;
-    /*background-color: #f5f5f5;*/
-    border-radius: 10px;
-    margin: 60px auto 20px auto; /* Utilisez "auto" pour centrer horizontalement */
-  }
-  
-  .locations .card {
-    position: relative; /* Ajouté pour que le positionnement absolu des images soit relatif à ceci */
-    overflow: hidden; /* Pour que les bordures arrondies s'appliquent aux images aussi */
-    border-radius: 10px; /* Pour les bordures arrondies */
-  }
-  
-  .locations .card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    z-index: 1; /* Assurez-vous que cette valeur est plus basse que celle du texte */
-    /*filter: brightness(70%);*/
-  }
-  
-  .locations .card .text-content {
-    position: absolute;
-    bottom: 10px; /* Ajustez en fonction de l'espacement souhaité depuis le bas de la carte */
-    left: 10px; /* Ajustez en fonction de l'espacement souhaité depuis la gauche de la carte */
-    z-index: 2; /* Assurez-vous que cette valeur est supérieure à celle de l'image */
-    color: white; /* Ou toute autre couleur selon votre design */
-    padding: 10px; /* Ajustez pour l'espacement autour du texte */
-    /* Ajoutez d'autres styles de texte si nécessaire */
-  }
-  
+    .locations {
+        display: grid;
+        grid-template-columns: 1fr; /* Une seule colonne pour les appareils mobiles */
+        gap: 20px;
+        padding: 0px;
+        /*background-color: #f5f5f5;*/
+        border-radius: 10px;
+        margin: 60px auto 20px auto; /* Utilisez "auto" pour centrer horizontalement */
+        flex: 1;
+    }
 
-  .listing {
-      padding: 10px 5%;
-  }
+    .locations .card {
+        position: relative; /* Ajouté pour que le positionnement absolu des images soit relatif à ceci */
+        overflow: hidden; /* Pour que les bordures arrondies s'appliquent aux images aussi */
+        border-radius: 10px; /* Pour les bordures arrondies */
+    }
 
-  footer {
-      padding: 20px 5%;
-      align-items: center;
-  }
+    .locations .card img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        z-index: 1; /* Assurez-vous que cette valeur est plus basse que celle du texte */
+        /*filter: brightness(70%);*/
+    }
 
-  footer p {
-    padding-bottom: 100px;
-  }
+    .locations .card .text-content {
+        position: absolute;
+        bottom: 10px; /* Ajustez en fonction de l'espacement souhaité depuis le bas de la carte */
+        left: 10px; /* Ajustez en fonction de l'espacement souhaité depuis la gauche de la carte */
+        z-index: 2; /* Assurez-vous que cette valeur est supérieure à celle de l'image */
+        color: white; /* Ou toute autre couleur selon votre design */
+        padding: 10px; /* Ajustez pour l'espacement autour du texte */
+        /* Ajoutez d'autres styles de texte si nécessaire */
+    }
+
+    .listing {
+        padding: 10px 5%;
+    }
+
+    footer {
+        align-items: center;
+    }
+
+    footer p {
+        padding-bottom: 20px; /* Ajustez en fonction de vos besoins */
+    }
 }
-
 
 /* Media query pour les écrans de largeur 320px ou moins  type iphone 5 ou SE*/
 @media only screen and (max-width: 320px) {
-  header, .header {
-    padding: 10px 2%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; /* Alignement vertical au début */
-    justify-content: flex-start; /* Alignement horizontal à gauche */
-    margin-top: 15px;    /* Marge en haut */
-    margin-right: 0px;  /* Marge à droite */
-    margin-bottom: 15px; /* Marge en bas */
-    margin-left: 0;      /* Aucune marge à gauche */
-  }
-  
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
 
-  header > div, .header > div {
-    /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
-    flex: none;
-  }
+    .location {
+        flex: 1; /* Permet au contenu principal de remplir l'espace disponible */
+    }
+    header,
+    .header {
+        padding: 10px 2%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; /* Alignement vertical au début */
+        justify-content: flex-start; /* Alignement horizontal à gauche */
+        margin-top: 15px; /* Marge en haut */
+        margin-right: 0px; /* Marge à droite */
+        margin-bottom: 15px; /* Marge en bas */
+        margin-left: 0; /* Aucune marge à gauche */
+    }
 
-  header div img, .header div img {
-    width: 80px;
-    height: auto;
-    margin-left: 0px;
-    margin-right: 50px;
-  }
+    header > div,
+    .header > div {
+        /* Assurez-vous que le conteneur du logo et de la navigation ne prend pas toute la largeur */
+        flex: none;
+    }
 
-  header nav, .header nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      color : red;
-      font-size: small;
-      padding-top: 5px;
-      padding-bottom: 5px;
-  }
+    header div img,
+    .header div img {
+        width: 80px;
+        height: auto;
+        margin-left: 0px;
+        margin-right: 50px;
+    }
 
-  header nav a, .header nav a {
-      margin: 0 5px; /* Espace entre les liens */
-      text-decoration: none;
-      color: inherit; /* Prend la couleur du parent */
-      font-weight: 600;
-      font-size: x-small;
-  }
-<<<<<<< HEAD
+    header nav,
+    .header nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        color: red;
+        font-size: small;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    header nav a,
+    .header nav a {
+        margin: 0 5px; /* Espace entre les liens */
+        text-decoration: none;
+        color: inherit; /* Prend la couleur du parent */
+        font-weight: 600;
+        font-size: x-small;
+    }
 }
-=======
-}
->>>>>>> 6175cdb6f0af2d906f14cac7ede7f0a79eab1ab7
